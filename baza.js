@@ -1,20 +1,19 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 //połączenie
 const connection = mysql.createConnection({
   host: 'localhost',      
-  user: 'root',           
-  password: '',           
+  user: 'Jan',           
+  password: 'Jan',           
   database: 'Baza' 
 });
-console.log("abc");
+console.log("test");
 
 // Połącz z bazą danych
 connection.connect((err) => {
   if (err) {
     return console.error('Błąd połączenia z bazą danych: ' + err.stack);
   }
-  console.log('Połączono z bazą danych jako ID: ' + connection.threadId);
   // Wykonaj SELECT
   connection.query('SELECT * FROM dane', (err, results) => {
     if (err) {
